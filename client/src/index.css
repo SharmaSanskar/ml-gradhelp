@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .label-primary {
+      @apply block mb-1;
+    }
+    .input-primary {
+        @apply py-1 px-2 rounded-md mb-3 border-2 border-teal-200 focus:outline-none focus:border-teal-600;
+    }
+    .home-btn {
+      @apply text-sm font-bold bg-teal-600 text-teal-50 px-2 py-1 rounded-md mt-3 hover:bg-teal-500;
+    }
+  }

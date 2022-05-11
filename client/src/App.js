@@ -7,6 +7,7 @@ import Recommendations from "./components/Recommendations";
 import Universities from "./components/Universities";
 import PrivateRoute from "./helpers/PrivateRoute";
 import { updateProfile } from "./redux/profileSlice";
+import logo from "./assets/logo.png";
 
 function App() {
   const dispatch = useDispatch();
@@ -20,8 +21,16 @@ function App() {
   }, [dispatch]);
 
   return (
-    <div className="App">
-      <h1>GradHelp</h1>
+    <div className="bg-teal-50 min-h-screen px-10 text-lg">
+      <div className="flex items-center justify-center">
+        <img src={logo} width={40} height={40} alt="" />
+        <h1 className="text-3xl font-bold p-4">
+          GradHelp{" "}
+          <span className="text-sm">
+            Helping you find your dream university
+          </span>
+        </h1>
+      </div>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="profile" element={<Profile />} />

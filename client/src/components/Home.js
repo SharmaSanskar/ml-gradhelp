@@ -1,54 +1,79 @@
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { ReactComponent as LearningSVG } from "../assets/learning.svg";
 
 function Home() {
   const { userProfile } = useSelector((state) => state.profile);
   return (
-    <div>
-      <div>
-        <h3>Welcome to GradHelp</h3>
+    <section>
+      <div className="my-8">
+        <h3 className="text-xl font-bold text-teal-600 uppercase">
+          Welcome to GradHelp
+        </h3>
         {userProfile ? (
           <div>
-            <p>Hello {userProfile.username}, your profile is ready</p>
+            <p>
+              Hello {userProfile.username}, your profile is ready. Explore the
+              various services below to find the perfect university for you.
+            </p>
             <Link to="/profile">
-              <button>Update Profile</button>
+              <button className="home-btn">Update Profile</button>
             </Link>
           </div>
         ) : (
           <div>
-            <p>Create your profile, to find the best US university for you.</p>
+            <p>
+              Create your profile, to unlock our services and find the
+              universities best suited for you.
+            </p>
             <Link to="/profile">
-              <button>Create Profile</button>
+              <button className="home-btn">Create Profile</button>
             </Link>
           </div>
         )}
       </div>
-      <div>
-        <h3>University Recommendations</h3>
-        <p>Find the best US universities best suited for your profile</p>
-        {userProfile ? (
-          <Link to="/recommendations">
-            <button>Get Recommendations</button>
-          </Link>
-        ) : (
-          <button disabled>Create your profile to access</button>
-        )}
-      </div>
-      <div>
-        <h3>Admission Chance</h3>
-        <p>
-          Explore the top Us universities and find out your cance of admit base
-          on your profile
-        </p>
-        {userProfile ? (
-          <Link to="/universities">
-            <button>Explore Universities</button>
-          </Link>
-        ) : (
-          <button disabled>Create your profile to access</button>
-        )}
-      </div>
-    </div>
+
+      <section className="flex">
+        <div className="flex-2">
+          <div className="bg-teal-100 p-6 rounded-lg">
+            <h3 className="text-xl font-bold uppercase">
+              Admission Chance Predicton
+            </h3>
+            <p>
+              Explore the top US universities and find your chance of admit in
+              them
+            </p>
+            {userProfile ? (
+              <Link to="/universities">
+                <button className="home-btn">Explore Universities</button>
+              </Link>
+            ) : (
+              <button disabled className="home-btn">
+                Create your profile to access
+              </button>
+            )}
+          </div>
+
+          <div className="my-8 bg-teal-100 p-6 rounded-lg">
+            <h3 className="text-xl font-bold uppercase">
+              University Recommendations
+            </h3>
+            <p>Find the best US universities best suited for your profile</p>
+            {userProfile ? (
+              <Link to="/recommendations">
+                <button className="home-btn">Get Recommendations</button>
+              </Link>
+            ) : (
+              <button disabled className="home-btn">
+                Create your profile to access
+              </button>
+            )}
+          </div>
+        </div>
+
+        <LearningSVG className="w-60 h-60 flex-1 mx-8 my-12" />
+      </section>
+    </section>
   );
 }
 

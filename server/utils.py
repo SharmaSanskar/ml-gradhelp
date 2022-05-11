@@ -43,6 +43,6 @@ def recommend_universities(research, industry, toefl, greV, greQ, greA, cgpa):
         [[research, industry, toefl, greV, greQ, greA, cgpa]]
     )
     pred = RECOMMENDATION_MODEL.predict(transformed_data)[0]
-    n = 5  # number of recommendations
+    n = 3  # number of recommendations
     recommendations = top_recommendations(n, pred)
     return list(recommendations)
