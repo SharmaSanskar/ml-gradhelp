@@ -29,9 +29,12 @@ function Profile() {
       <h3 className="text-2xl font-bold text-teal-600 uppercase my-3">
         Your Profile
       </h3>
-      <form className="text-base flex" onSubmit={handleSubmit}>
+      <form
+        className="text-base flex flex-col sm:flex-row"
+        onSubmit={handleSubmit}
+      >
         {/* LEFT SIDE */}
-        <div className="flex-1">
+        <div className="flex-1 pr-2">
           {/* Username */}
           <label className="label-primary" htmlFor="username">
             Name:
@@ -108,7 +111,7 @@ function Profile() {
         </div>
 
         {/* RIGHT SIDE */}
-        <div className="flex-1">
+        <div className="flex-1 pl-2">
           {/* CGPA */}
           <label className="label-primary" htmlFor="cgpa">
             CGPA [1.0 - 10.0]:
@@ -190,11 +193,11 @@ function Profile() {
             min="0"
             required
           />
-          <button className="block font-bold bg-teal-600 text-teal-50 w-1/3 px-4 py-1 rounded-md mt-3 hover:bg-teal-500">
+          <button className="block font-bold bg-teal-600 text-teal-50 w-1/3 px-4 py-1 rounded-md my-3 hover:bg-teal-500">
             Save
           </button>
         </div>
-        <InspectionSVG className="w-72 h-72 flex-1 mx-8 my-12" />
+        <InspectionSVG className="hidden md:block w-72 h-72 flex-1 mx-8 my-12" />
       </form>
     </section>
   );

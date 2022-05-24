@@ -62,8 +62,8 @@ function Recommendations() {
         <p className="font-semibold">Unable to retrieve recommendations</p>
       )}
 
-      <div className="flex">
-        <div className="flex-2">
+      <div className="flex flex-col lg:flex-row">
+        <div className="flex-1">
           {unis?.map((uni) => (
             <div
               key={uni.rank}
@@ -71,7 +71,7 @@ function Recommendations() {
             >
               <div className="flex items-center">
                 <div className="flex-1">
-                  <h4 className="font-bold">
+                  <h4 className="text-lg font-bold">
                     #{uni.rank} -{" "}
                     <a href={uni.website} target="_blank" rel="noreferrer">
                       {uni.name}
@@ -87,7 +87,7 @@ function Recommendations() {
             </div>
           ))}
         </div>
-        <GraduationSVG className="w-40 h-40 flex-1 mx-8 my-12" />
+        <GraduationSVG className="w-80 mx-auto my-2 h-80 lg:w-40 lg:h-40 flex-1 lg:mx-8 lg:my-12" />
       </div>
     </div>
   );

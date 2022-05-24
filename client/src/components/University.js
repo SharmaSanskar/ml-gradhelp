@@ -36,9 +36,9 @@ function University({ uni }) {
   };
   return (
     <div className="bg-teal-100 mb-4 rounded-lg px-6 py-4">
-      <div className="flex items-center">
+      <div className="flex flex-col sm:flex-row sm:items-center">
         <div className="flex-1">
-          <h4 className="font-bold">
+          <h4 className="text-lg font-bold">
             #{uni.rank} -{" "}
             <a href={uni.website} target="_blank" rel="noreferrer">
               {uni.name}
@@ -52,14 +52,15 @@ function University({ uni }) {
         </div>
 
         <button
-          className="text-base font-bold bg-teal-600 text-teal-50 rounded-md h-10 px-4 hover:bg-teal-500"
+          className="text-sm px-2 py-1 mt-2 sm:mt-0 sm:py-2 sm:px-4 sm:text-base font-bold bg-teal-600 text-teal-50 rounded-md hover:bg-teal-500"
           disabled={loading}
           onClick={() => predictChance(uni.rank)}
         >
           Predict chance
         </button>
       </div>
-      <div className="font-semibold">
+
+      <div className="sm:text-lg font-semibold">
         {loading && <p className="mt-2">Predicting admission chance...</p>}
         {error && <p className="mt-2">Unable to retrieve prediction</p>}
         {chance && (

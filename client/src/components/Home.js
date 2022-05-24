@@ -12,7 +12,7 @@ function Home() {
         </h3>
         {userProfile ? (
           <div>
-            <p>
+            <p className="text-lg">
               Hello {userProfile.username}, your profile is ready. Explore the
               various services below to find the perfect university for you.
             </p>
@@ -33,8 +33,8 @@ function Home() {
         )}
       </div>
 
-      <section className="flex">
-        <div className="flex-2">
+      <section className="flex flex-col md:flex-row">
+        <div className="flex-1">
           <div className="bg-teal-100 p-6 rounded-lg">
             <h3 className="text-xl font-bold uppercase">
               Admission Chance Predicton
@@ -54,7 +54,7 @@ function Home() {
             )}
           </div>
 
-          <div className="my-8 bg-teal-100 p-6 rounded-lg">
+          <div className="my-6 bg-teal-100 p-6 rounded-lg">
             <h3 className="text-xl font-bold uppercase">
               University Recommendations
             </h3>
@@ -71,7 +71,7 @@ function Home() {
           </div>
         </div>
 
-        <LearningSVG className="w-60 h-60 flex-1 mx-8 my-12" />
+        <LearningSVG className="hidden md:block w-60 h-60 flex-1 mx-8 my-12" />
       </section>
     </section>
   );

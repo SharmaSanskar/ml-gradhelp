@@ -21,12 +21,12 @@ function App() {
   }, [dispatch]);
 
   return (
-    <div className="bg-teal-50 min-h-screen px-10 text-lg">
+    <div className="bg-teal-50 min-h-screen px-10">
       <div className="flex items-center justify-center">
         <img src={logo} width={40} height={40} alt="" />
         <h1 className="text-3xl font-bold p-4">
           GradHelp{" "}
-          <span className="text-sm">
+          <span className="block sm:inline text-sm">
             Helping you find your dream university
           </span>
         </h1>
