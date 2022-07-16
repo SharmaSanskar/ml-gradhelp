@@ -19,7 +19,7 @@ function Recommendations() {
     try {
       setLoading(true);
       const res = await axios.post(
-        `http://localhost:8000/api/recommend_universities`,
+        `https://server-gradhelp.herokuapp.com/api/recommend_universities`,
         userProfile
       );
 

@@ -8,9 +8,7 @@ from utils import get_uni_rating, predict_admission, recommend_universities
 
 app = FastAPI()
 
-origins = [
-    "http://localhost:3000",
-]
+origins = ["http://localhost:3000", "https://gradhelp.vercel.app"]
 
 app.add_middleware(
     CORSMiddleware,
@@ -24,7 +22,7 @@ app.add_middleware(
 # ROUTES
 @app.get("/")
 def get_root():
-    return {"Hello": "World"}
+    return {"Hello": "GradHelp"}
 
 
 @app.get("/api/unis", response_model=List[UniversityModel])

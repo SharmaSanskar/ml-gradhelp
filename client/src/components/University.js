@@ -12,7 +12,7 @@ function University({ uni }) {
     try {
       setLoading(true);
       const res = await axios.post(
-        `http://localhost:8000/api/predict_admission/${rank}`,
+        `https://server-gradhelp.herokuapp.com/api/predict_admission/${rank}`,
         userProfile
       );
       switch (res.data) {

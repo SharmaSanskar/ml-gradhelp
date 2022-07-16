@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-client = motor.motor_asyncio.AsyncIOMotorClient(os.getenv('MONGODB_URI'))
+client = motor.motor_asyncio.AsyncIOMotorClient(os.getenv("MONGODB_URI"))
 
 db = client.GradHelp
 collection = db.universities
@@ -19,7 +19,7 @@ async def fetch_all_unis():
 
 
 async def fetch_uni_by_name(name):
-    document = await collection.find_one({'name': name})
+    document = await collection.find_one({"name": name})
     if document:
         return UniversityModel(**document)
     return None
