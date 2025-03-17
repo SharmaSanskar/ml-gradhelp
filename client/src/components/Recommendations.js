@@ -6,6 +6,8 @@ import { useGetUniversitiesQuery } from "../redux/universityApi";
 import { ReactComponent as GraduationSVG } from "../assets/graduation.svg";
 import ErrorPage from "./ErrorPage";
 
+const SERVER_URL = process.env.REACT_APP_SERVER_URL;
+
 function Recommendations() {
   const { data: uniList, isLoading, isError } = useGetUniversitiesQuery();
 
@@ -19,7 +21,7 @@ function Recommendations() {
     try {
       setLoading(true);
       const res = await axios.post(
-        `https://server-gradhelp.herokuapp.com/api/recommend_universities`,
+        `${SERVER_URL}/api/recommend_universities`,
         userProfile
       );
 

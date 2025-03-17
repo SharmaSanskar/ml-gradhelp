@@ -1,9 +1,11 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
+const SERVER_URL = process.env.REACT_APP_SERVER_URL;
+
 export const universityApi = createApi({
   reducerPath: "universityApi",
   baseQuery: fetchBaseQuery({
-    baseUrl: "https://server-gradhelp.herokuapp.com",
+    baseUrl: SERVER_URL,
   }),
 
   endpoints: (builder) => ({

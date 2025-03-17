@@ -2,6 +2,8 @@ import { useSelector } from "react-redux";
 import axios from "axios";
 import { useState } from "react";
 
+const SERVER_URL = process.env.REACT_APP_SERVER_URL;
+
 function University({ uni }) {
   const [chance, setChance] = useState("");
   const [loading, setLoading] = useState(false);
@@ -12,7 +14,7 @@ function University({ uni }) {
     try {
       setLoading(true);
       const res = await axios.post(
-        `https://server-gradhelp.herokuapp.com/api/predict_admission/${rank}`,
+        `${SERVER_URL}/api/predict_admission/${rank}`,
         userProfile
       );
       switch (res.data) {
